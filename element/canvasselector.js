@@ -6,6 +6,7 @@ class CanvasSelector extends CanvasScribe{
     this._lastsel=null;
     this.scalewh=[1,1];
     this._selMode=0;
+    this.selfunc=null;
     let mctl=this.mctl;
     mctl.movef=(e, flg)=>{
       if(mctl.pressing!=1) return;
@@ -41,6 +42,9 @@ class CanvasSelector extends CanvasScribe{
         this._lastsel[2]=mctl.endXY[0]*bw;
         this._lastsel[3]=mctl.endXY[1]*bh;
        }
+      }
+      if(this.selfunc){
+        this.selfunc();
       }
       this.redraw();
     };
