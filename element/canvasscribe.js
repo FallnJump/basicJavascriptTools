@@ -24,13 +24,13 @@ class CanvasScribe{
     if(border!=null) this.ctx.lineWidth=border;
     if(style!=null) this.ctx.setLineDash(...style);
   }
-  rectangle(l,t,r,b,color=null,border=null,style=null){
+  rectangle(l,t,w,h,color=null,border=null,style=null){
     this.changeStrokeStyle(color, border, style);
-    this.ctx.strokeRect(l,t,r,b);
+    this.ctx.strokeRect(l,t,w,h);
   }
-  fillRect(l,t,r,b,color=null){
+  fillRect(l,t,w,h,color=null){
     if(color!=null) this.ctx.fillStyle=color;
-    this.ctx.fillRect(l,t,r,b);
+    this.ctx.fillRect(l,t,w,h);
   }
   line(l,t,r,b,color=null,border=null,style=null){
     this.changeStrokeStyle(color,border,style);
