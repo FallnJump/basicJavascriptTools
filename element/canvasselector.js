@@ -43,8 +43,8 @@ class CanvasSelector extends CanvasScribe{
         this._lastsel[3]=mctl.endXY[1]*bh;
        }
       }
-      if(this.selfunc){
-        this.selfunc();
+      if(this.selfunc && flg>0){
+        this.selfunc(flg);
       }
       this.redraw();
     };
